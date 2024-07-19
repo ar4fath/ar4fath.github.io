@@ -101,6 +101,7 @@
             object-fit: cover;
             margin-bottom: 20px;
             border: 1px solid white;
+            -webkit-user-drag: none;
         }
 
         .name {
@@ -150,6 +151,7 @@
         .links a img {
             width: 40px;
             height: 40px;
+            -webkit-user-drag: none;
         }
 
         .links a:hover {
@@ -174,6 +176,7 @@
             height: 16px;
             vertical-align: middle;
             transition: transform 0.3s;
+            -webkit-user-drag: none;
         }
 
         .riot-icon-text {
@@ -286,6 +289,12 @@
         }
 
         document.addEventListener('DOMContentLoaded', createStars);
+
+        // Disable right-click on images
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('contextmenu', event => event.preventDefault());
+        });
     </script>
 </body>
 </html>

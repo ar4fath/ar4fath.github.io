@@ -276,14 +276,14 @@
     <script>
         function createStars() {
             const starryBackground = document.querySelector('.starry-background');
-            const starCount = 100; // Number of stars
+            const starCount = 100; 
 
             for (let i = 0; i < starCount; i++) {
                 const star = document.createElement('div');
                 star.classList.add('star');
                 star.style.top = `${Math.random() * 100}%`;
                 star.style.left = `${Math.random() * 100}%`;
-                star.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random duration between 2s and 5s
+                star.style.animationDuration = `${Math.random() * 3 + 2}s`;
                 starryBackground.appendChild(star);
             }
         }

@@ -64,8 +64,8 @@
             border-image: linear-gradient(to bottom, #4d4d4d, white) 1;
             animation: borderAnimation 5s linear infinite;
             overflow: hidden;
-            margin: 0 auto; /* Center the container */
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            margin: 0 auto; 
+            box-sizing: border-box; 
         }
 
         @keyframes borderAnimation {
@@ -157,6 +157,39 @@
             color: #b0b0b0;
         }
 
+        .riot-icon-container {
+            display: inline-block;
+            position: relative;
+        }
+
+        .riot-icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            transition: transform 0.3s;
+        }
+
+        .riot-icon-text {
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .riot-icon-container:hover .riot-icon {
+            transform: scale(1.5);
+        }
+
+        .riot-icon-container:hover .riot-icon-text {
+            display: block;
+        }
+
         @media (max-width: 450px) {
             .profile-pic {
                 width: 80px;
@@ -222,7 +255,13 @@
                 <span>email</span>
             </a>
         </div>
-        <div class="subfooter">riot is Arafath#EUW</div>
+        <div class="subfooter">
+            <div class="riot-icon-container">
+                <img src="images/riot.png" alt="Riot Logo" class="riot-icon">
+                <div class="riot-icon-text">riot</div>
+            </div>
+            is Arafath#EUW
+        </div>
     </div>
     <script>
         function createStars() {

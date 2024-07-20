@@ -119,7 +119,7 @@
         }
 
         .subfooter {
-            font-size: 1em;
+            font-size: 10px;
             color: #828282;
             font-weight: 200;
         }
@@ -171,9 +171,9 @@
             position: relative;
         }
 
-        .riot-icon {
-            width: 16px;
-            height: 16px;
+        .email-icon {
+            width: 20px;
+            height: 20px;
             vertical-align: middle;
             transition: transform 0.3s;
             -webkit-user-drag: none;
@@ -192,11 +192,15 @@
             font-size: 12px;
         }
 
-        .riot-icon-container:hover .riot-icon {
+        .riot-icon:hover .riot-icon-text {
+            display: block;
+        }
+
+        .email-icon-container:hover .email-icon {
             transform: scale(1.5);
         }
 
-        .riot-icon-container:hover .riot-icon-text {
+        .email-icon-container:hover .email-icon-text {
             display: block;
         }
 
@@ -240,13 +244,18 @@
                 <img src="images/twitch.png" alt="Twitch Logo">
                 <span>twitch</span>
             </a>
-            <a href="https://discord.com/users/228767471274819595" target="_blank">
-                <img src="images/discord.png" alt="Discord Logo">
-                <span>discord</span>
-            </a>
             <a href="https://steamcommunity.com/id/arafathc/" target="_blank">
                 <img src="images/steam.png" alt="Steam Logo">
                 <span>steam</span>
+            </a>
+            <a class="riot-icon">
+                <img src="images/riot.png" alt="Riot Icon">
+                <span>riot</span>
+                <span class="riot-icon-text">Arafath#EUW</span>
+            </a>
+            <a href="https://discord.com/users/228767471274819595" target="_blank">
+                <img src="images/discord.png" alt="Discord Logo">
+                <span>discord</span>
             </a>
             <a href="https://twitter.com/ar4fath" target="_blank">
                 <img src="images/twitter.png" alt="Twitter Logo">
@@ -260,17 +269,14 @@
                 <img src="images/tiktok.png" alt="TikTok Logo">
                 <span>tiktok</span>
             </a>
-            <a href="mailto:arafathchow2@gmail.com" class="email-icon">
-                <img src="images/email.png" alt="Email Icon">
-                <span>email</span>
-            </a>
         </div>
         <div class="subfooter">
-            <div class="riot-icon-container">
-                <img src="images/riot.png" alt="Riot Logo" class="riot-icon">
-                <div class="riot-icon-text">riot</div>
+            <div class="email-icon-container">
+                <a href="mailto:arafathchow2@gmail.com" class="email-icon">
+                <img src="images/email.png" alt="Email Icon" class="email-icon">
+                </a>
             </div>
-            is Arafath#EUW
+            email
         </div>
     </div>
     <script>
@@ -290,7 +296,6 @@
 
         document.addEventListener('DOMContentLoaded', createStars);
 
-        // Disable right-click on images
         const images = document.querySelectorAll('img');
         images.forEach(img => {
             img.addEventListener('contextmenu', event => event.preventDefault());

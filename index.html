@@ -10,7 +10,6 @@
             font-family: Arial, sans-serif;
             background-color: black;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
@@ -54,7 +53,6 @@
             background-color: black;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
             max-width: 450px;
             width: 100%;
@@ -68,6 +66,8 @@
             box-sizing: border-box;
             transition: border-color 0.3s, box-shadow 0.3s;
             box-shadow: 0 0 10px white;
+            overflow-y: auto;
+            max-height: 90vh; /* Adjust this value to fit your design */
         }
 
         @keyframes borderAnimation {

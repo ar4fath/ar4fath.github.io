@@ -230,6 +230,20 @@
                 font-size: 9px;
             }
         }
+
+        .copy-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
@@ -251,7 +265,7 @@
                 <img src="images/steam.png" alt="Steam Logo">
                 <span>steam</span>
             </a>
-            <a class="riot-icon">
+            <a class="riot-icon" onclick="copyToClipboard('Arafath#EUW')">
                 <img src="images/riot.png" alt="Riot Icon">
                 <span>riot</span>
                 <span class="riot-icon-text">Arafath#EUW</span>
@@ -282,6 +296,7 @@
             email
         </div>
     </div>
+    <div class="copy-notification" id="copyNotification">Copied to clipboard</div>
     <script>
         function createStars() {
             const starryBackground = document.querySelector('.starry-background');
@@ -303,6 +318,18 @@
         images.forEach(img => {
             img.addEventListener('contextmenu', event => event.preventDefault());
         });
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                const notification = document.getElementById('copyNotification');
+                notification.style.display = 'block';
+                setTimeout(function() {
+                    notification.style.display = 'none';
+                }, 2000);
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
     </script>
 </body>
 </html>
